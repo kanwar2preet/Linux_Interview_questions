@@ -1,0 +1,22 @@
+From BIOS to Subsystems
+
+Lets review what happens when we boot Linux:
+
+1).The BIOS or a bootloader (lilo, zlilo, grub, etc) loads Linux Kernel from disk to memory, with some parameters defined in the bootloader
+configuration. We can see this process watching the dots that appear in the screen. Kernel file stays in the /boot directory, 
+and is accessed only at this moment.
+
+2).In memory, Kernel code starts to run, detecting a series of vital devices, disk partitions etc.
+
+3). On of the last things Kernel does is to mount the / (root) filesystem, that obrigatoriamente must 
+   contain the /etc, /sbin, /bin and /lib directories.
+
+4).Immediately behind, calls the program called init (/sbin/init) and passes the control to him.
+
+5). The init command will read his configuration file (/etc/inittab) which defines the system runlevel, and some Shell scripts to be run.
+
+6). These scripts will continue the setup of system's minimal infrastructure, mounting other filesystems (according to /etc/fstab), 
+    activating swap space (virtual memory), etc.
+
+7). The last step, and most interesting for you, is the execution of the special script called /etc/rc.d/rc, which 
+    initializes the subsystems according to a directory structure under /etc/rc.d. The name rc comes from run commands.
