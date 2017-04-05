@@ -1,0 +1,19 @@
+1)  Install the Apache package. Allow it to get documents stored on NFS mounted directories.
+2)  Extend the existing xfs file system to a total size of 200MB and add a label called myFS.
+3)  Assign the same SELinux contexts used by the home directories to the /xfs directory permanently.
+4)  Create two users: john with uid/gid equal to 2000, password 12345678 and davis with uid/gid equal to 3000, password 87654321. 
+    Make davis‘ account validity stopping in one month.
+5)  Allow davis (and only davis) to get full access to john‘s home directory.
+6)  Create a directory named /common. Allow john and davis to share documents in the /common directory using a group called team. 
+    Both of them can read, write and remove documents from the other in this directory but any user not member of the group can’t.
+7)  Create a xfs file system on a new logical volume of 100MB called lv_xfs. Mount it permanently with uuid under /xfs.
+8)  Write a Bash script called prog.sh in the /root directory that creates 40 files of 2MB each with the fallocate command in the
+    mounted /xfs directory.Each file has got a name as follows: .file_N where N is a number from 1 to 40.
+9)  Create an ext4 file system on a new logical volume of 100MB called lv_ext4. Mount it permanently under the /ext4 directory. 
+    Copy the files previously created into this new space.
+10) Configure a virtual console.
+11) Create a logical volume of 200MB called lv_swap2 and add it permanently to the current swap space.
+12) Create a cron job running as root, starting at 11PM every day and writing a report on daily system resource consumption
+     in the /var/log/consumption.log file.
+13) Set the default target to boot into X Window level (previously level 5)
+14) Change the hostname to mycentos.example.com
