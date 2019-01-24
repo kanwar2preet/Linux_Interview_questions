@@ -5,3 +5,28 @@ Default kill signal: Sigterm
 -9 (-KILL) - let the kernel kick the process out
 -11 (-SEGV) - have the program crash brutally
 -15 (-TERM) - the default, ask the program kindly to terminate
+
+
+Bits in MAC Address 48bits i.e 6 bytes
+
+Some DNS Records:
+
+A (Host address)
+AAAA (IPv6 host address)
+ALIAS (Auto resolved alias)
+CNAME (Canonical name for an alias)
+MX (Mail eXchange)
+NS (Name Server)
+PTR (Pointer)
+SOA (Start Of Authority)
+SRV (location of service)
+TXT (Descriptive text)
+
+Hosts in /23 subnet
+
+
+
+
+
+
+
