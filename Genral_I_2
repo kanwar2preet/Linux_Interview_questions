@@ -1,0 +1,7 @@
+Default kill signal: Sigterm
+
+-1 (-HUP) - restart a process
+-2 (-INT) - terminate a process
+-9 (-KILL) - let the kernel kick the process out
+-11 (-SEGV) - have the program crash brutally
+-15 (-TERM) - the default, ask the program kindly to terminate
